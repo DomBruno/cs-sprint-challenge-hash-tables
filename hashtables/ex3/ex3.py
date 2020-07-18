@@ -1,10 +1,30 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    
+    # Initialize interHash to hold key:value (int:lists)
+    
+    interHash = {}
+
+    # nested for loop to check if int is present in lists
+    # checks each int from each list to interHash
+
+    for a in arrays:
+        for b in a:
+            if b in interHash:
+                interHash[b] += 1
+            else:
+                interHash[b] = 1
+
+    # init result
+    result = []
+
+    numArray = len(arrays)
+
+    for c in interHash:
+        if interHash[c] == numArray:
+            result.append(c)
 
     return result
+
 
 
 if __name__ == "__main__":
