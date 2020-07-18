@@ -6,9 +6,37 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    
+    # Init hashtable to hold key:value (source:detination)
+    
+    ticketHash = {}
+
+    # Init route list; this syntax still confuses me
+    
+    route = [None] * length
+
+    # Begin for loop to chain tickets using source: "NONE"" as a base
+
+    for i in range(length):
+        if tickets[i].source == "NONE":
+            
+            # check for index with "Source" matching "Destination" of previous index
+
+            route[0] = tickets[i].destination
+        ticketHash[tickets[i].source] = tickets[i].destination
+
+    # Begin for loop to check if index -1 is None
+
+    for r in range(length):
+        
+        if route[r - 1] is not None:
+
+            #add to route
+
+            route[r] = ticketHash[route[r-1]]
+
+
+
+
 
     return route
