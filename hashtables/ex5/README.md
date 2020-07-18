@@ -1,5 +1,7 @@
 # File Finder
 
+# can't we just "find foo -type f"  ?
+
 Given a list of full paths to files, and a list of filenames to query,
 report all the full paths that match that filename.
 
